@@ -1,0 +1,13 @@
+<html>
+<head>
+  <title> </title>
+</head>
+<body>
+  <a href = "/index"> index </a>
+<h1> <%= @title %> </h1>
+<ul> <% @contacts.each do |contact| %>
+   <li> <%= contact.first_name %>  <%= contact.last_name%> <%= contact.email %> <%= contact.note%></li>
+   <% end -%>
+ </ul>
+</body>
+</html>
