@@ -11,7 +11,11 @@ end
 get '/contacts/:id' do
   @title = 'My Contact list'
    @contacts = Contact.find_by({id: params[:id].to_i})
-   erb :show_contact
+   if @contacts
+     erb :show_contact
+   else
+     raise Sinatra::NotFound
+   end
 end
 
 get '/contacts' do
