@@ -14,6 +14,13 @@ get '/contacts/:id' do
    erb :show_contact
 end
 
+get '/contacts' do
+   @title = 'My Contact list'
+   @contacts = Contact.all
+
+   erb :contacts
+end
+
 get '/about' do
   erb  :about
 end
