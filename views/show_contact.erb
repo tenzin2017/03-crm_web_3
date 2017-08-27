@@ -1,5 +1,11 @@
 <h1> <%= @title %> </h1>
-<strong> First Name : </strong> <%= @contacts.first_name%> <br>
-<strong> Last Name  : </strong> <%= @contacts.last_name %> <br>
-<strong> email      : </strong> <%= @contacts.email %> <br>
-<strong> note       : </strong> <%= @contacts.note %>
+<strong> First Name : </strong> <%= @contact.first_name%> <br>
+<strong> Last Name  : </strong> <%= @contact.last_name %> <br>
+<strong> email      : </strong> <%= @contact.email %> <br>
+<strong> note       : </strong> <%= @contact.note %> <br> <br>
+
+<form  action="/contacts/<%= @contact.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete a Contact">
+
+</form>

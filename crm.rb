@@ -15,8 +15,8 @@ end
 
 get '/contacts/:id' do
   @title = 'My Contact list'
-   @contacts = Contact.find_by({id: params[:id].to_i})
-   if @contacts
+   @contact = Contact.find_by({id: params[:id].to_i})
+   if @contact
      erb :show_contact
    else
      raise Sinatra::NotFound
@@ -70,6 +70,17 @@ else
   rais Sinatara::NotFound
 end
 
+end
+
+delete '/contacts/:id' do
+   @contact = Contact.find(params[:id].to_i)
+
+   if @contact
+     @contact.delete
+     redirect to('/contacts')
+   else
+     raise Sinatara::NotFound
+   end
 end
 
 
