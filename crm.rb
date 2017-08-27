@@ -8,6 +8,11 @@ get '/index' do
     erb :index
 end
 
+get '/contacts/new' do
+
+    erb :new
+end 
+
 get '/contacts/:id' do
   @title = 'My Contact list'
    @contacts = Contact.find_by({id: params[:id].to_i})
@@ -28,6 +33,8 @@ end
 get '/about' do
   erb  :about
 end
+
+
 
 
 after do
