@@ -3,10 +3,10 @@
   <title> </title>
 </head>
 <body>
-  <a href = "/index"> index </a>
+  <a href = "/index"> index </a> <br>
 <h1> <%= @title %> </h1>
 <ul> <% @contacts.each do |contact| %>
-   <li> <a href = "/contacts/<%= contact.id%>"><%= contact.first_name %>  <%= contact.last_name%></a></li>
+   <li> <a href = "/contacts/<%= contact.id%>"><%= contact.first_name %>  <%= contact.last_name%></a>  <a href = "/contacts/<%= contact.id%>/edit"><strong> EDIT </strong></a></li>
    <% end %>
  </ul>
 </body>
