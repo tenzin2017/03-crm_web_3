@@ -11,7 +11,7 @@ end
 get '/contacts/new' do
 
     erb :new
-end 
+end
 
 get '/contacts/:id' do
   @title = 'My Contact list'
@@ -21,6 +21,17 @@ get '/contacts/:id' do
    else
      raise Sinatra::NotFound
    end
+end
+
+post '/contacts' do
+
+  Contact.create(
+  first_name: params[:first_name],
+  last_name: params[:last_name],
+  email: params[:email],
+  note: params[:note]
+  )
+  redirect to('/contacts')
 end
 
 get '/contacts' do
