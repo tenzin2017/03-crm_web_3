@@ -45,6 +45,17 @@ get '/about' do
   erb  :about
 end
 
+get '/contacts/:id/edit' do
+  @contact = Contact.find_by(id: params[:id].to_i)
+
+  if @contact
+    erb :edit_contact
+  else
+    raise Sinatra::NotFound
+  end
+end
+
+
 
 
 
